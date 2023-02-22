@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/srcset_sizes.css" />
+    <style>
+      .vt-augment {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .vt-augment.drawer {
+        display: none;
+        width: 700px;
+        background: white;
+        border: 1px solid #e6e6e6;
+        text-align: left;
+        z-index: 102;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        box-shadow: -4px 5px 8px -3px rgba(17, 17, 17, 0.16);
+        animation: slideToRight 0.5s 1 forwards;
+        transform: translateX(100vw);
+      }
+      .vt-augment.drawer[opened] {
+        display: flex;
+        animation: slideFromRight 0.2s 1 forwards;
+      }
+      .vt-augment > .spinner {
+        position: absolute;
+        z-index: 199;
+        top: calc(50% - 50px);
+        left: calc(50% - 50px);
+        border: 8px solid rgba(0, 0, 0, 0.2);
+        border-left-color: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1.2s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes slideFromRight {
+        0% {
+          transform: translateX(100vw);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+      @keyframes slideToRight {
+        100% {
+          transform: translateX(100vw);
+          display: none;
+        }
+      }
+      @media screen and (max-width: 700px) {
+        .vt-augment.drawer {
+          width: 100%;
+        }
+      }
+    </style>
+    <title>Srcset and Sizes</title>
+  </head>
+  <body>
+    <h1>Srcset + Sizes</h1>
+    <p>
+      Use Chrome device emulator to check the actual image (currentSrc) loaded
+      by the browser with different viewport width and DPR value.
+    </p>
+    <div class="row">
+      <div class="col">
+        <img
+          src="img/red_225.jpg"
+          alt="test"
+          srcset="
+            img/red_225.jpg 225w,
+            img/red_300.jpg 300w,
+            img/red_350.jpg 350w,
+            img/red_640.jpg 640w
+          "
+          sizes="(max-width: 400px) 100vw, (max-width: 700px) 50vw, (max-width: 900px) 33vw, 225px"
+        />
+      </div>
+      <div class="col">
+        <img
+          src="img/blue_225.jpg"
+          alt="test"
+          srcset="
+            img/blue_225.jpg 225w,
+            img/blue_300.jpg 300w,
+            img/blue_350.jpg 350w,
+            img/blue_640.jpg 640w
+          "
+          sizes="(max-width: 400px) 100vw, (max-width: 700px) 50vw, (max-width: 900px) 33vw, 225px"
+        />
+      </div>
+      <div class="col">
+        <img
+          src="img/yellow_225.jpg"
+          alt="test"
+          srcset="
+            img/yellow_225.jpg 225w,
+            img/yellow_300.jpg 300w,
+            img/yellow_350.jpg 350w,
+            img/yellow_640.jpg 640w
+          "
+          sizes="(max-width: 400px) 100vw, (max-width: 700px) 50vw, (max-width: 900px) 33vw, 225px"
+        />
+      </div>
+      <div class="col">
+        <img
+          src="img/green_225.jpg"
+          alt="test"
+          srcset="
+            img/green_225.jpg 225w,
+            img/green_300.jpg 300w,
+            img/green_350.jpg 350w,
+            img/green_640.jpg 640w
+          "
+          sizes="(max-width: 400px) 100vw, (max-width: 700px) 50vw, (max-width: 900px) 33vw, 225px"
+        />
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picture and source</title>
+  </head>
+  <body>
+    <h1>Picture and source</h1>
+    <p>
+      Use Chrome device emulator to check the actual image (currentSrc) loaded
+      by the browser with different viewport width and DPR value.
+    </p>
+    <picture>
+      <source
+        type="image/webp"
+        srcset="
+          img/square_mobile.webp,
+          img/square_mobile@2x.webp 2x,
+          img/square_mobile@3x.webp 3x
+        "
+        media="(max-width: 600px)"
+      />
+      <source
+        srcset="
+          img/square_mobile.jpg,
+          img/square_mobile@2x.jpg 2x,
+          img/square_mobile@3x.jpg 3x
+        "
+        media="(max-width: 600px)"
+      />
+      <source
+        type="image/webp"
+        srcset="
+          img/square.webp    1x,
+          img/square@2x.webp 2x,
+          img/square@3x.webp 3x
+        "
+      />
+      <img
+        src="img/square.jpg"
+        srcset="img/square@2x.jpg 2x, img/square@3x.jpg 3x"
+        alt="square"
+      />
+    </picture>
+  </body>
+</html>
