@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio and Video</title>
+  </head>
+  <body>
+    <h1>Audio and Video</h1>
+    <video
+      controls
+      width="320"
+      height="240"
+      preload="auto"
+      poster="media/poster_test.jpg"
+    >
+      <source src="media/test_video_1.mp4" type="video/mp4" />
+      <source src="media/test_video_1.webm" type="video/webm" />
+      <p>
+        Your browser does not support the video tag. Here is a
+        <a href="media/test_video_1.mp4">link to the video</a> instead.
+      </p>
+    </video>
+
+    <hr />
+
+    <audio controls>
+      <source src="media/test_audio_1.ogg" type="audio/ogg" />
+      <source src="media/test_audio_1.mp3" type="audio/mp3" />
+      <p>
+        Your browser does not support the audio tag. Here is a
+        <a href="media/test_audio_1.mp3">link to the audio</a> instead.
+      </p>
+    </audio>
+  </body>
+</html>
